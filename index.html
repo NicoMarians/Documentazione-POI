@@ -1,324 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-<link href="assets/images/favicon.png" rel="icon" />
-<title>PROGETTO XYZ</title>
-<meta name="description" content="Your ThemeForest item Name and description">
-<meta name="author" content="harnishdesign.net">
-
-<!-- Stylesheet
-============================== -->
-<!-- Bootstrap -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
-<!-- Font Awesome Icon -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
-<!-- Magnific Popup -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
-<!-- Highlight Syntax -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
-<!-- Custom Stylesheet -->
-<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<body style="background-color: #778899">
+    <div id="homePage" class="page visible" >
+        <div class="container">
+            <div class="row" style="padding-top: 1%">
+                <div class="col-7">
+                    <button class="btn btn-success" type="button">Amministrazione</button>
+                    <div id="home-mappa" class="rounded" style="background-color: #FFF5EE; width: 500px; height: 500px;"> 
+                        
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div id="home-table" class="rounded" class="d-flex flex-column" style="background-color: #FFF5EE; width: 400px; height: 400px;">
+                        
+                    </div>
+                    <br>
+                    <div id="home-descrizione" class="rounded" style="background-color: #FFF5EE; width: 400px; height: 200px;">
 
-<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- Preloader -->
-<div class="preloader">
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-<!-- Preloader End --> 
+    <div id="descrizionePage" class="page hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <br>
+                    <div id="descrizione-foto" class="rounded" style="background-color: #FFF5EE; width: 500px; height: 600px;"> 
+                        
+                    </div>
+                </div>
+                <div class="col-5">
+                    <button type="button" class="btn btn-danger" style="width: 100; ">BACK</button>
+                    <div id="descrizione-descrizione" class="rounded" style="background-color: #FFF5EE; width: 400px; height: 600px;">
 
-<!-- Document Wrapper   
-=============================== -->
-<div id="main-wrapper"> 
-  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  
-  <!-- Content
-  ============================ -->
-  <div id="content" role="main">
+    <div id="loginPage" class="page hidden">
+        <div class="container">
+            <button type="button" class="btn btn-danger" style="width:100px">Back</button>
+            <div class="row"> 
+                <div class="d-flex align-content-center">
+                    <div class="rounded" style="background-color: #FFF5EE; width: 600px; height: 500px; align-content: center;"> 
+                        <div id="login-form">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="amministrazionePage" class="page hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <button class="btn btn-success">HOME</button>
+                    <div id="amministrazione-tabella" class="rounded" style="background-color: #FFF5EE; width: 950px; height: 550px;"> 
     
-	<!-- Sidebar Navigation
-	============================ -->
-	<div class="idocs-navigation bg-dark docs-navigation-dark">
-      <ul class="nav flex-column ">
-        <li class="nav-item"><a class="nav-link active" href="#start">Inizio</a>          
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#architettura_informazione">Architettura informazione</a>          
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#UML">UML</a>
-			<ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#umlcasiduso">Casi d'uso</a></li>
-            <li class="nav-item"><a class="nav-link" href="#umloggetti">Oggetti</a></li>
-            <li class="nav-item"><a class="nav-link" href="#umlstato">Stato</a></li>
-			<li class="nav-item"><a class="nav-link" href="#umlsequenza">Sequenza</a></li>
-           
-          </ul>
-		</li>
-        <li class="nav-item"><a class="nav-link" href="#contenuti">Contenuti</a>
-          
-        </li>
-		<li class="nav-item"><a class="nav-link" href="#wireframes">Wireframes</a></li>
-              
-		</li>
-         <li class="nav-item"><a class="nav-link" href="#progetto">Il progetto</a>
-           <ul class="nav flex-column">
-             <li class="nav-item"><a class="nav-link" href="#link">Link al progetto</a></li>
-             </ul>  
-         </li>
-      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
- 
-    <div class="idocs-content">
-      <div class="container"> 
-   
-        <section id="start">
-        <h1>Documentazione</h1>
-        <h2>Nome del progetto</h2>
-        <p class="lead">Qui va una breve descrizione.</p>
-		<hr>
-		<div class="row">
-			<div class="col-sm-6 col-lg-4">
-				<ul class="list-unstyled">
-					<li><strong>Classe/Anno:</strong> 5BInf - 24/25</li>
-					<li><strong>Author:</strong> Mariani Nicolò, Pizzonia Nicolò, Fassina Raffaele</li>
-				</ul>
-			</div>
-			<div class="col-sm-6 col-lg-4">
-				<ul class="list-unstyled">
-					<li><strong class="font-weight-700">Creato:</strong> 16 dicembre 2024</li>
-					<li><strong>Ultima modifica:</strong> 6 gennaio 2025</li>
-				</ul>
-			</div>
-		</div>
-        </section>
-        
-		<hr class="divider">
 
-        <section id="architettura_informazione">
-          <h2>Architettura informazione</h2>
-          <p class="lead">Qui va inserito un diagramma che rappresenta la struttura delle informazioni del progetto.</p>
-          
-        </section>
-        
-		<hr class="divider">
+    <div id="modificaPage" class="page hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <div id="modifica-foto" class="rounded" style="background-color: #FFF5EE; width: 500px; height: 600px;"> 
 
+                    </div>
+                </div>
+                <div class="col-5">
+                    <button class="btn btn-danger" type="button" style="width: 100">BACK</button>
+                    <div id="modifica-descrizione" class="rounded" style="background-color: #FFF5EE; width: 400px; height: 550px;">
 
-        <section id="UML">
-              <h2>UML</h2>
-              <p class="lead"><img src="assets/images/arch-informazione/immagini-UML.jpeg"></p>
-            </section>
-        <hr class="divider">
-
-        <section id="contenuti">
-          <h2>Contenuti del progetto</h2>
-          <p class="lead"><table class="table">
-            <tr>
-            <td>guerre dell’oppio
-            Le guerre dell'oppio furono due conflitti, svoltisi rispettivamente dal 1839 al 1842 e dal 1856 al 1860, 
-            che contrapposero l'Impero cinese al Regno Unito, i cui interessi militari e commerciali nella regione 
-            erano stati posti sotto il controllo della Compagnia britannica delle Indie orientali.Iniziata dalla 
-            penetrazione commerciale britannica, che aveva aperto il mercato cinese all'oppio proveniente dall’Impero 
-            anglo-indiano, la Cina inasprì i propri divieti sulla droga.</td>
-            <td><img src="assets/images/contenuti-progetto/oppio-1.jpeg"></td>
-            <td><img src="assets/images/contenuti-progetto/oppio-2.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/oppio-3.jpg"></td>
-          </tr>
-          <tr>
-          <td>Nella Londra vittoriana c’era un problema di sfruttamento minorile e disparità di salario. 
-            I bambini-operai venivano assunti già all'età di otto-nove anni ed erano costretti a lavorare 
-            in condizioni disagiate sia a livello igienico, sia a livello più strettamente lavorativo, dal 
-            momento che lavoravano anche dodici ore al giorno, talvolta anche di notte e quasi sempre 
-            durante i giorni festivi.
-          </td>
-            <td><img src="assets/images/contenuti-progetto/fabbriche-1.jpeg"></td>
-            <td><img src="assets/images/contenuti-progetto/fabbriche-2.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/fabbriche-3.jpeg"></td>
-          </tr>
-          <tr>
-          <td>Nelle miniere di carbone i bambini iniziavano a lavorare a cinque anni e generalmente morivano prima dei 25.
-              Molti bambini (e adulti) lavoravano 16 ore al giorno. Nel 1802 e nel 1819 leggi delle fabbriche il limite 
-              delle ore di lavoro passò a 12 ore in fabbrica e nei cotonifici. Le condizioni brutali portavano a malattie e 
-              problemi salutari che abbassavano drasticamente l’aspettativa di vita.
-          </td>
-            <td><img src="assets/images/contenuti-progetto/miniere-1.png"></td>
-            <td><img src="assets/images/contenuti-progetto/miniere-2.png"></td>
-          </tr>
-          <tr>
-          <td>	Osborne House, situata sull'Isola di Wight, è una delle residenze reali che ancora oggi ci 
-            permettono di fare un tuffo nella storia britannica. Questo gioiello architettonico, infatti, 
-            fu la dimora estiva prediletta della Regina Victoria e del Principe Alberto, un luogo di serenità 
-            lontano dalla frenesia di Londra.
-          </td>
-            <td><img src="assets/images/contenuti-progetto/reggia-1.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/reggia-2.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/reggia-3.avif"></td>
-          </tr>
-          <tr>
-          <td>	Per parlare dei quartieri di lusso a Londra non si può che partire da South Kensington, 
-            che si trova a ovest del centro ed è celebre per il fatto di essere una delle zone simbolo 
-            della nobiltà londinese: South Kensington è chiamato anche il “Royal district”, nel Kensington 
-            Palace nacque la regina Victoria e abitò lady Diana e in questa che è la zona più elegante di 
-            Londra si trovano le case più lussuose di Londra e le strade più esclusive come Kensington Road, 
-            con i suoi edifici in tipico stile inglese, dall'architettura georgiana a quella vittoriana. 
-            All'interno di Kensington si trova anche Notting Hill, uno dei quartieri più di tendenza da 
-            molto tempo. Anche Mayfair è non solo una zona prestigiosa di Londra ma uno dei quartier 
-            simbolo del lusso londinese: qui infatti oltre alle eleganti abitazioni, si trovano eleganti 
-            piazze e i curatissimi giardini. Queste zone venivano viste anche come zone “sicure” in cui si 
-            poteva girare tranquillamente.
-
-          </td>
-            <td><img src="assets/images/contenuti-progetto/benestanti-1.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/benestanti-2.jpg"></td>
-            </tr>
-          <tr>
-          <td>	Le zone più povere della baraccopoli londinese erano situate ad est di Londra. 
-            Questi quartieri erano definiti la Londra buia per vari motivi: l’illuminazione era 
-            scarsa o assente, i palazzi alti e in condizioni fatiscenti, le strade strette, 
-            affollate di persone, oggetti e panni stesi.Oltre alla zona est gli slums si estendevano 
-            nel centro di Londra: erano i quartieri St. Giles e Clerkenwell, il “Devil’s Acre” presso 
-            Westminster Abbey, Jacob’s Island  a Bermondsey, lungo la riva sud del Tamigi, il Mint a 
-            Southwark e Pottery Lane in Notting Hill. Gli slums più famosi in epoca vittoriana probabilmente 
-            furono i quartieri di Whitechapel, nei quali furono compiuti i delitti di jack lo Squartatore.
-          </td>
-            <td><img src="assets/images/contenuti-progetto/poveri-1.jpeg"></td>
-            <td><img src="assets/images/contenuti-progetto/poveri-2.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/poveri-3.jpg"></td>
-          </tr>
-          <tr>
-          <td>	L'epoca vittoriana, che va dal 1837 al 1901 durante il regno della regina Vittoria, 
-            è stata un'epoca di notevoli innovazioni e realizzazioni ingegneristiche che hanno cambiato 
-            per sempre il panorama della società moderna. Questo periodo vide la nascita di tecnologie e 
-            infrastrutture rivoluzionarie, caratterizzate dalla costruzione di sistemi ferroviari iconici 
-            che rivoluzionarono i trasporti, come le grandi locomotive e le estese reti ferroviarie che 
-            collegarono città e regioni come mai prima. Tra i trionfi ingegneristici dell'epoca vi furono 
-            le squisite strutture in ferro e vetro, come il Crystal Palace, progettato per la Grande 
-            Esposizione del 1851, che mise in mostra l'ingegno di architetti e ingegneri vittoriani. 
-            L'epoca ha anche inaugurato la costruzione di opere di ingegneria civile durature come il 
-            Tower Bridge e la vasta rete di acquedotti, ponti e gallerie che hanno trasformato gli 
-            ambienti urbani e facilitato il commercio. Inoltre, lo sviluppo di sistemi igienico-sanitari 
-            e di iniziative per la salute pubblica illustrarono una crescente comprensione dell'ingegneria 
-            al servizio della società, migliorando la vita nelle città densamente popolate. L'uso di materiali 
-            come l'acciaio e i progressi di tecniche come i ponti a sbalzo hanno spinto i confini di ciò che 
-            era considerato possibile, segnando l'epoca vittoriana come un momento cruciale nella storia 
-            dell'ingegneria che ha gettato le basi per le infrastrutture moderne su cui facciamo affidamento oggi.
-
-          </td>
-            <td><img src="assets/images/contenuti-progetto/ingegneria-1.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/ingegneria-2.jpg"></td>
-          </tr>
-          <tr>
-          <td>	West End è una delle tre grandi aree principali che compongono Londra.
-            Durante il periodo vittoriano, come importanza, era considerato il vero cuore della città. 
-            Al suo interno figuravano gli storici palazzi governativi, le abitazioni più lussuose, i 
-            negozi più esclusivi e i locali più alla moda.
-            Era, in breve, la parte borghese (e aristocratica) della metropoli, pulita, ordinata ed elegante, 
-            patria di club per gentiluomini ed eventi mondani della società da bene.
-            Nella cultura di massa il West End si pone in diretta contrapposizione all'East End, 
-            dove il primo è simbolo di progresso e il secondo di arretratezza.
-            
-          </td>
-            <td><img src="assets/images/contenuti-progetto/west-end-1.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/west-end-2.jpg"></td>
-          </tr>
-          <tr>
-            <td>	Parole forti quelle che il quotidiano londinese The Poor Man's Guardian riservò al 
-              quartiere di Spitalfields il 18 febbraio 1832.
-              Era questa, nel XIX secolo, l'area dell'East End più povera e disperata di Londra, sprofondata 
-              nel degrado a causa del declino dell'industria tessile.
-              Sul finire dell'Ottocento Spitalfields vantava il più alto tasso di criminalità, soprattutto 
-              omicidi e prostituzione, della città, e nel 1881 la stessa forza di polizia la denunciò come 
-              "area più pericolosa della metropoli".
-              La lentissima ripresa cominciò appena durante il XX secolo, e tutt'oggi rimane uno dei quartieri 
-              meno sviluppati di Londra.
-              Ne Il mistero di Virginia Hayley Spitalfields, e in particolare i quartieri limitrofi, sarà teatro 
-              di inquietanti indagini investigative.
-            </td>
-              <td><img src="assets/images/contenuti-progetto/spitalfields-1.png"></td>
-              </tr>
-          <tr>
-          <td>	Situato nel distretto di Westminster, Covent Garden è uno dei quartieri più famosi di Londra.
-            Fondato nel 1540 come luogo di mercato, divenne col passare dei secoli una vera e propria attrazione, 
-            grazie all'edificazione di teatri, caffè e locali notturni (bettole poco raccomandabili, all'epoca).
-            Il suo declino si manifestò nel XVIII secolo, quando il boom urbano della città spostò l'interesse dei 
-            londinesi verso mete più "moderne".
-            Molte attività vennero chiuse o trasferite altrove, e Covent Garden sopravvisse unicamente come mercato 
-            ortofrutticolo, guadagnando l'infelice nomea di "Piazza di Venere", dove tutto era consentito, e ogni tipo 
-            di affare, lecito o meno, veniva trattato alla luce del sole.
-            La rinascita avvenne nella prima metà del XIX secolo. La "vecchia Covent Garden" fu spazzata via, abbattuta 
-            e ripulita. Al suo posto sorse la caratteristica struttura al coperto di stile neoclassico, simbolo, tra gli 
-            altri, della Londra vittoriana popolare che spesso viene proposta nei film in costume o nelle opere di genere.
-            
-          </td>
-            <td><img src="assets/images/contenuti-progetto/covent-garden-1.jpg"></td>
-            <td><img src="assets/images/contenuti-progetto/covent-garden-2.jpg"></td>
-          </tr>
-          </table></p>
-
-        </section>
-
-         <hr class="divider">
-
-        <section id="wireframes">
-          <h2>Wireframes</h2>
-          <p class="lead"><img src="assets/images/arch-informazione/immagini-Wireframe.jpeg"></p>
-          <p class="lead"><img src="assets/images/arch-informazione/immagini-Storyboard.jpeg"></p>
-          
-           <hr class="divider">
-
-          <section id="progetto">
-          <h2>Il progetto</h2>
-          <p class="lead">In questa sezione vanno inserite ulteriori informazioni aggiuntive (es. credenziali) ed il link al progetto </p>
-
-            <section id="link">
-            <h2>Link al progetto</h2>
-            <a href="">Link al progetto</a>
-
-        </section>
-        
-      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-	
-  </div>
-  <!-- Content end --> 
-  
-  <!-- Footer
-  ============================ -->
-  <footer id="footer" class="section bg-dark footer-text-light">
-    <div class="container">
-      
-      <p class="text-center">ITT e LSSA "Molinari" - Milano <a href="progettimolinari.it">Progetti Molinari</a>. Tutti i diritti riservati</p>
-	  
-    </div>
-  </footer>
-  <!-- Footer end -->
-  
-</div>
-<!-- Document Wrapper end --> 
 
-<!-- Back To Top --> 
-<a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
-
-<!-- JavaScript
-============================ -->
-<script src="assets/vendor/jquery/jquery.min.js"></script> 
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
-<!-- Highlight JS -->
-<script src="assets/vendor/highlight.js/highlight.min.js"></script> 
-<!-- Easing --> 
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script> 
-<!-- Magnific Popup --> 
-<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
-<!-- Custom Script -->
-<script src="assets/js/theme.js"></script>
 </body>
 </html>
