@@ -10,8 +10,8 @@ const create_table = () => {
         },
         render: () => {
             let line = "<table class=table>";
-            line += table_data.map((Luogo) => {
-                return `<tr><td>${Luogo.nome}</td></tr>`;
+            line += table_data.map((place) => {
+                return `<tr><td>${place.nome}</td><td>${place.luogo}</td></tr>`;
             }).join("");
             line += "</table>";
             binding_element.innerHTML = line; 
