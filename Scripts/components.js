@@ -64,16 +64,23 @@ export const createModTable = (domElement) => {
 
 export const createNavigator = () => {
     const pages = Array.from(document.querySelectorAll(".page"));
-    return{
-        render : (newPage) => {
-        const url = new URL(document.location.href);
-        const pageName = url.hash.replace("#", `#${newPage}`);
-        const selected = pages.filter((page) => page.id === pageName)[0] || pages[0];
+    console.log(pages)
     
-        hide(pages);
-        show(selected);
-        }
-    } 
+    const render = () => {
+       const url = new URL(document.location.href);
+       console.log(url)
+       const pageName = url.hash.replace("#", "");
+       console.log(pageName)
+       const selected = pages.filter((page) => page.id === (pageName))[0] || pages[0];
+ 
+
+
+       hide(pages);
+       show(selected);
+       console.log(selected)
+    }
+    window.addEventListener('popstate', render); 
+    render();   
  }
 
 export const createTable = (domElement) => {
@@ -95,7 +102,6 @@ export const createTable = (domElement) => {
             line += tableData.map((element) => {
                 return `<tr>` + element.map((e) => `<td>${e}</td>`).join("") + `</tr>`}).join("");
             line += "</table>";
-            console.log(line);
             bindingElement.innerHTML = line; 
         
         },

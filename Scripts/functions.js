@@ -1,4 +1,4 @@
-export function upload(valore) {
+export function upload(valore,token) {
     console.log("Upload",valore)
     return new Promise((resolve,reject) => {
         try{
@@ -6,7 +6,7 @@ export function upload(valore) {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
-                    key: '4095a663-3e69-4699-94e7-225f722690bc',
+                    key: token,
                 },
                 body: JSON.stringify({
                     key: 'progetto-POI',
@@ -20,14 +20,14 @@ export function upload(valore) {
     });
   }
   
-  export function download() {
+  export function download(token) {
     return new Promise((resolve,reject) => {
         try{
             fetch("https://ws.cipiaceinfo.it/cache/get", {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
-                    key: '4095a663-3e69-4699-94e7-225f722690bc',
+                    key: token,
                 },
                 body: JSON.stringify({
                     key: 'progetto-POI',

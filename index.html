@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,11 @@
     <title>Document</title>
 </head>
 <body style="background-color: #778899">
-    <div id="homePage" class="page hidden">
+    <div id="home" class="page hidden">
         <div class="container">
             <div class="row" style="padding-top: 1%">
                 <div class="col-7">
-                    <button id="home-button-amministrazione" class="btn btn-success navigationButton" type="button">Amministrazione</button>
+                    <a href="#amministrazione"> <button class="btn btn-success" type="button">Amministrazione</button> </a>
                     <div id="home-mappa" class="rounded" style="background-color: #FFF5EE; width: 500px; height: 500px;"> 
                         
                     </div>
@@ -26,14 +26,17 @@
                     </div>
                     <br>
                     <div id="home-descrizione" class="rounded" style="background-color: #FFF5EE; width: 400px; height: 200px;">
-
+                        <p>Questo progetto ha lo scopo di 
+                            mostrare posti o avvenimenti 
+                            importanti riguardante la londra 
+                            vittoriana</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="descrizionePage" class="page hidden">
+    <div id="descrizione" class="page hidden">
         <div class="container">
             <div class="row">
                 <div class="col-7">
@@ -43,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-5">
-                    <button id="descrizione-button-home" type="button" class="btn btn-danger navigationButton" style="width: 100; ">Home</button>
+                    <a href="#home"> <button class="btn btn-success" type="button">Home</button> </a>
                     <div id="descrizione-descrizione" class="rounded" style="background-color: #FFF5EE; width: 400px; height: 600px;">
 
                     </div>
@@ -52,9 +55,9 @@
         </div>
     </div>
 
-    <div id="loginPage" class="page hidden">
+    <div id="login" class="page hidden">
         <div class="container">
-            <button type="button" class="btn btn-danger" style="width:100px">Back</button>
+            <a href="#home"> <button class="btn btn-success " type="button">Home</button> </a>
             <div class="row"> 
                 <div class="d-flex align-content-center">
                     <div class="rounded" style="background-color: #FFF5EE; width: 600px; height: 500px; align-content: center;"> 
@@ -66,11 +69,11 @@
         </div>
     </div>
 
-    <div id="amministrazionePage" class="page hidden">
+    <div id="amministrazione" class="page hidden">
         <div class="container">
             <div class="row">
                 <div class="col-7">
-                    <button class="btn btn-success">HOME</button>
+                    <a href="#home"> <button class="btn btn-success" type="button">Home</button> </a>
                     <div id="amministrazione-tabella" class="rounded" style="background-color: #FFF5EE; width: 950px; height: 550px;"> 
     
                     </div>
@@ -79,7 +82,7 @@
         </div>
     </div>
 
-    <div id="modificaPage" class="page hidden">
+    <div id="modifica" class="page hidden">
         <div class="container">
             <div class="row">
                 <div class="col-7">
@@ -88,7 +91,7 @@
                     </div>
                 </div>
                 <div class="col-5">
-                    <button class="btn btn-danger" type="button" style="width: 100">BACK</button>
+                    <a href="#home"> <button class="btn btn-success" type="button">Home</button> </a>
                     <div id="modifica-descrizione" class="rounded" style="background-color: #FFF5EE; width: 400px; height: 550px;">
 
                     </div>

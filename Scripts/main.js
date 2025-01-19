@@ -4,7 +4,7 @@ import { download,upload,hide,show, validateLogin } from "./functions.js";
 const navigationButtons = document.getElementsByClassName("navigationButton");
 const buttonInviaLogin = document.getElementById("button-login-invia")
 
-
+/*
 upload({data:[["Nome A","Luogo A"],["Nome B", "Luogo B"]],places:[
     {
        name: "Piazza del Duomo",
@@ -24,11 +24,14 @@ upload({data:[["Nome A","Luogo A"],["Nome B", "Luogo B"]],places:[
     }
  ]}).then(console.log);
 
-const navigator = createNavigator();
-navigator.render("home");
+ */
 
+createNavigator();
 
 fetch("./conf.json").then(r => r.json()).then((confData) => {
+
+    const cacheToken = confData.cacheToken;
+
     const login = createLogin(document.getElementById("login-form"));
     login.setData(confData.loginFormData);
 
@@ -39,7 +42,7 @@ fetch("./conf.json").then(r => r.json()).then((confData) => {
 
     const map = createMap();
 
-    download().then((newData) => {
+    download(cacheToken).then((newData) => {
         map.setPlaces(newData.places);
         map.render()
 
@@ -58,12 +61,6 @@ fetch("./conf.json").then(r => r.json()).then((confData) => {
         })
     }
 })
-
-for (let i=0;i < navigationButtons.length; i++){
-    navigationButtons[i].onclick = () => {
-        let nextPage = navigationButtons[i].id.split("-")[2];
-    }
-}
 
 
 
