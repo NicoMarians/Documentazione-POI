@@ -52,13 +52,13 @@ export function upload(valore,token) {
     element.classList.remove("hidden");
   }
 
-  export const validateLogin = (username,password) => {
+  export const validateLogin = (username,password,token) => {
     return new Promise((resolve, reject) => {
         fetch("http://ws.cipiaceinfo.it/credential/login", { 
         method: "POST",
         headers: {
             "content-type": "application/json",
-            "key": myToken
+            "key": token
         },
         body: JSON.stringify({
             username: username,
