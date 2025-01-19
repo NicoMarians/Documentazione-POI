@@ -1,4 +1,6 @@
-const createLogin = (domElement) => {
+import {hide,show } from "./functions.js";
+
+export const createLogin = (domElement) => {
     let formData;
     let bindingElement = domElement;
     let isLogged = false;
@@ -7,7 +9,7 @@ const createLogin = (domElement) => {
             template = ``;
             formData.map((element) => {
                 template += `<div class="d-flex justify-content-center align-items-center">`;
-                template += `<input id="input-login-${element[1]}" type="${element[0]}" placeholder="${element[1]}"`;
+                template += `<input id="input-login-${element[0]}" type="${element[1]}" placeholder="${element[1]}"`;
                 template += `</div>`;
             });
             template += `<div class="d-flex justify-content-center">`;
@@ -21,12 +23,14 @@ const createLogin = (domElement) => {
         },
         authLogin: () => {
             isLogged = true;
+        },
+        checkLogin: () => {
+            return isLogged;
         }
     }
 }
 
-const createModTable = (header,domElement) => {
-    let tableHeader;
+export const createModTable = (domElement) => {
     let bindingElement = domElement;
     let tableData;
     return {
@@ -35,14 +39,18 @@ const createModTable = (header,domElement) => {
             template = `<div class="row" >`;
             tableData.map((element,index) => {
                 template += `<div class="col-10 d-flex flex-column" style="padding-right: 0%;">`;
-                template += `<input type="text" id="modTable-element-${index}" placeholder="${element}">`;
+                template += `<input type="text" id="modTable-element-${index}" placeholder="${element}" readonly>`;
                 template += `</div>`;
                 template += `<div class="col-1 d-flex flex-column" style="padding-left: 0%; padding-right: 0%;">`;
                 template += `<button id="button-modifica-${index}" type="button">Mod</button>`;
-                template += `</div>`;        
+                template += `</div>`;  
+                template += `<div class="col-1 d-flex flex-column" style="padding-left: 0%;">`;
+                template += `<button type="button" style="background-color: red;">X</button>`;
+                template += `</div>`;
             })
-
             template += `</div>`;
+
+            bindingElement.innerHTML = template;
 
         },
         setData: (newData) => {
@@ -54,17 +62,67 @@ const createModTable = (header,domElement) => {
     }
 }
 
-const createNavigator = (bindingElement) => {
-    const pages = Array.from(bindingElement.querySelectorAll(".page"));
+export const createNavigator = () => {
+    const pages = Array.from(document.querySelectorAll(".page"));
+    return{
+        render : (newPage) => {
+        const url = new URL(document.location.href);
+        const pageName = url.hash.replace("#", `#${newPage}`);
+        const selected = pages.filter((page) => page.id === pageName)[0] || pages[0];
     
-    const render = () => {
-       const url = new URL(document.location.href);
-       const pageName = url.hash.replace("#", "");
-       const selected = pages.filter((page) => page.id === pageName)[0] || pages[0];
- 
-       hide(pages);
-       show(selected);
-    }
-    window.addEventListener('popstate', render); 
-    render();   
+        hide(pages);
+        show(selected);
+        }
+    } 
  }
+
+export const createTable = (domElement) => {
+    let bindingElement = domElement;
+    let tableHeader;
+    let tableData;
+    return{
+        configHeader: (newElement) => {
+            tableHeader = newElement;
+        },
+        render: () => {
+
+            console.log(tableData)
+            let line = "<table class=table> <tr>";
+            line += tableHeader.map((element) => {
+                return `<td> ${element} </td>`
+            })
+            line += `</tr>`
+            line += tableData.map((element) => {
+                return `<tr>` + element.map((e) => `<td>${e}</td>`).join("") + `</tr>`}).join("");
+            line += "</table>";
+            console.log(line);
+            bindingElement.innerHTML = line; 
+        
+        },
+        setData: (newData) => {
+            tableData = newData;
+        }
+    }
+}
+
+export const createMap = () => {
+    let places;
+    return {
+        render: () => {
+            let zoom = 12;
+            let maxZoom = 19;
+            let map = L.map('home-mappa').setView(places[0].coords, zoom);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: maxZoom,
+            attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+            places.forEach((place) => {
+            const marker = L.marker(place.coords).addTo(map);
+            marker.bindPopup(`<b>${place.name}</b>`);
+            });
+        },
+        setPlaces: (newPlaces) => {
+            places = newPlaces;
+        }
+    }
+}

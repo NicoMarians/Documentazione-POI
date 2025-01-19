@@ -5,10 +5,11 @@
   "name": "documentazione-poi",
   "version": "1.0.0",
   "description": "Documentazione del progetto POI",
-  "main": "index.js",
+  "main": "Script/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }
