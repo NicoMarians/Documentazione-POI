@@ -1,4 +1,4 @@
-import { createLogin,createModTable,createNavigator,createTable, createMap } from "./components.js";
+import { createLogin,createModTable,createNavigator,createTable, createMap, pubSub } from "./components.js";
 import { download,upload,hide,show, validateLogin } from "./functions.js";
 
 const bottoniHome = document.getElementsByClassName("bottoneHome");
@@ -21,7 +21,6 @@ fetch("./conf.json").then(r => r.json()).then((confData) => {
     //upload([{nome:"nomeLuogo",coords:[10,10],descrizione:"descrizioneLuogo",immagine:"img1"}],cacheToken).then(console.log);
     //upload([],cacheToken).then(console.log);
 
-    //const pubSub = createPubSub();
 
     const login = createLogin(document.getElementById("login-form"));
     login.setData(confData.loginFormData);
@@ -47,6 +46,11 @@ fetch("./conf.json").then(r => r.json()).then((confData) => {
         data = newData;
     })
 
+
+    pubSub.subscribe("renderModTable",modTable.render);
+    pubSub.subscribe("renderTable",table.render);
+
+
 /////////////////////////////////////////////////////////////////////
 
     document.getElementById("invia-modifica").onclick = () => {
@@ -59,9 +63,23 @@ fetch("./conf.json").then(r => r.json()).then((confData) => {
         fetch("./conf.json").then(r => r.json()).then((confData) => {
     
             download(confData.cacheToken).then((newData) => {
-                let newObject = {nome:nome,coords:[lat,lon],descrizione:descrizione,immagine:foto};
+
+                let found = false;
                 data = newData;
-                data.push(newObject);
+
+                data.forEach((element) => {
+                    if (element.nome == nome){
+                        element.coords = [lat,lon];
+                        element.descrizione = descrizione;
+                        element.immagine = foto;
+                        found = true;
+                    }
+                });
+                if (!found){
+                    let newObject = {nome:nome,coords:[lat,lon],descrizione:descrizione,immagine:foto};
+                    data.push(newObject);
+                }
+                
                 upload(data,confData.cacheToken).then(console.log);
                 table.setData(data);
                 map.setPlaces(data);

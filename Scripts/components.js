@@ -85,7 +85,14 @@ export const createModTable = (domElement) => {
 
             tableData.forEach((element,index) => {
                 document.getElementById(`button-modifica-${index}`).onclick = () => {
-                    
+                    let line = `<img src="${element.immagine}" alt="error">`
+                    document.getElementById("modifica-foto").innerHTML = line;
+                    document.getElementById("input-nome-modifica").value = element.nome;
+                    document.getElementById("input-nome-modifica").readonly = "readonly";
+                    document.getElementById("input-descrizione-modifica").value = element.descrizione;
+                    document.getElementById("input-foto-modifica").value = element.immagine;
+                    document.getElementById("input-lat-modifica").value = element.coords[0];
+                    document.getElementById("input-lon-modifica").value = element.coords[1];
                 }
                     
             });
@@ -93,15 +100,28 @@ export const createModTable = (domElement) => {
             tableData.forEach((element,index) => {
                 document.getElementById(`button-elimina-${index}`).onclick = () => {
                     console.log(tableData);
-                    tableData.pop(index);
+                    tableData.splice(index,1);
                     console.log(tableData);
                     fetch("./conf.json").then(r => r.json()).then((confData) => {
                         upload(tableData,confData.cacheToken).then(() => {
-                            download(confData.cacheToken).then((newData) => {tableData = newData;console.log(tableData)})
+                            download(confData.cacheToken).then((newData) => {
+                                tableData = newData;
+                                console.log(tableData);
+                                pubSub.publish("renderModTable");
+                            })
                         });
                     })
                 }      
             });
+
+            document.getElementById("button-aggiungi-modTable").onlick = () => {
+                console.log("A")
+                document.getElementById("input-nome-modifica").value = "";
+                document.getElementById("input-descrizione-modifica").value = "";
+                document.getElementById("input-foto-modifica").value = "";
+                document.getElementById("input-lat-modifica").value = "";
+                document.getElementById("input-lon-modifica").value = "";
+            }
 
         },
         setData: (newData) => {
@@ -194,3 +214,5 @@ export const createPubSub = () => {
         }
     }
 }
+
+export const pubSub = createPubSub();
