@@ -162,15 +162,24 @@ export const createTable = (domElement) => {
         },
         render: () => {
 
-            let line = "<table class=table> <tr>";
+            let line ="";
+            line +=  `<table class="table"> <tr>`;
             line += tableHeader.map((element) => {
-                return `<td> ${element} </td>`
+                return `<td> ${element} </td>`;
             })
             line += `</tr>`
-            line += tableData.map((element) => {
-                return `<tr> <td><a href="#descrizione">${element.nome}</a></td><td>lat: ${element.coords[0]},lon: ${element.coords[1]} </tr>`}).join("");
-            line += "</table>";
+            line += tableData.map((element,index) => {
+                return `<tr> <td> <a href="#descrizione" id="home-element-${index}"> ${element.nome} </a> </td><td>Lat: ${element.coords[0]},Lon: ${element.coords[1]}</td> </tr>`}).join("");
+            line += `</table>`;
             bindingElement.innerHTML = line; 
+
+            tableData.forEach((element,index) => {
+                console.log(element);
+                document.getElementById(`home-element-${index}`).onclick = () => {
+                    document.getElementById("descrizione-foto").innerHTML = `<img src="${element.immagine}" alt="error">`;
+                    document.getElementById("descrizione-descrizione").innerHTML = element.descrizione;
+                }
+            });
         },
         setData: (newData) => {
             tableData = newData;
@@ -184,7 +193,7 @@ export const createMap = () => {
         render: () => {
             let zoom = 12;
             let maxZoom = 19;
-            let map = L.map('home-mappa').setView(places[0].coords, zoom);
+            let map = L.map('home-mappa').setView([51.5072,0.1276], zoom);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: maxZoom,
             attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
