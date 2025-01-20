@@ -225,3 +225,55 @@ export const createPubSub = () => {
 }
 
 export const pubSub = createPubSub();
+
+export const createdesc = (domElement) => {
+    let bindingElement = domElement;
+    let tableHeader;
+    let tableData;
+    return{
+        configHeader: (newElement) => {
+            tableHeader = newElement;
+        },
+        render: () => {
+
+            let line = "<table class=table> <tr>";
+            line += tableHeader.map((element) => {
+                return `<td> ${element} </td>`
+            })
+            line += `</tr>`
+            line += tableData.map((element) => {
+                return `<tr> <td>${element.descrizione}</tr>`}).join("");
+            line += "</table>";
+            bindingElement.innerHTML = line; 
+        },
+        setData: (newData) => {
+            tableData = newData;
+        }
+    }
+}
+
+export const createimg = (domElement) => {
+    let bindingElement = domElement;
+    let tableHeader;
+    let tableData;
+    return{
+        configHeader: (newElement) => {
+            tableHeader = newElement;
+        },
+        render: () => {
+
+            let line = "<table class=table> <tr>";
+            line += tableHeader.map((element) => {
+                return `<td> ${element} </td>`
+            })
+            line += `</tr>`
+            line += tableData.map((element) => {
+                return `<tr> <td>${element.immagine}</tr>`}).join("");
+            line += "</table>";
+            bindingElement.innerHTML = line; 
+        },
+        setData: (newData) => {
+            tableData = newData;
+        }
+    }
+}
